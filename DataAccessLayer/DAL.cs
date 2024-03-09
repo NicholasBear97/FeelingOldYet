@@ -16,10 +16,11 @@ namespace DataAccessLayer
             
         }
 
+        //TODO: Connect SPROCs from DAL and use DAL to make calls here
         #region Get SPROCs
         public List<Person> GetPeople()
         {
-            return ;
+            return new List<Person>();
         }
         #endregion
 

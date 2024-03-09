@@ -1,4 +1,6 @@
-﻿namespace FeelingOldYet.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace FeelingOldYet.Models
 {
     public class Person
     {
@@ -6,7 +8,7 @@
 
         public int Age { get; set; }
 
-        public int? Id { get; set; }
+        public int ID { get; set; }
 
         public Person() { }
 
@@ -18,7 +20,7 @@
 
         public void UpdateId(int id)
         {
-            Id = id;
+            ID = id;
         }
     }
 }

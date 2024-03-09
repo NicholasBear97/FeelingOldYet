@@ -10,15 +10,18 @@ namespace FeelingOldYet.Pages.Shared
     {
         IProcessor generalProcessor = new GeneralProcessor();
         [BindProperty]
-        [Required]
-        public Person Person { get; set; }
+        public Person? Person { get; set; }
         public void OnGet()
         {
         }
 
         public IActionResult OnPost()
         {
-            ProcessPerson(Person);
+            if (Person != null) 
+            {
+                ProcessPerson(Person);
+            }
+
             return RedirectToPage("AgeStatistics");
         }
 
