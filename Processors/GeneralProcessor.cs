@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FeelingOldYet.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,25 +20,31 @@ namespace AgeProcessors
             DaysProcessor = new DaysProcessor();
             LeaderboardProcessor = new LeaderBoardProcessor();
         }
-
-        public void Process(int age)
+        public void Process(Person person)
         {
-            SendToDaysProcessor(age);
-            SendToAlertProcessor(age);
-            SendToLeaderBoardProcessor(age);
+            SavePersonToDB(person);
+            PerformAgeLogic(person);
         }
 
-        public void SendToDaysProcessor(int age)
+        public void SavePersonToDB(Person person) { }
+        public void PerformAgeLogic(Person person)
         {
-            AlertProcessor.Process(age);
+            SendToDaysProcessor(person);
+            SendToAlertProcessor(person);
+            SendToLeaderBoardProcessor(person);
         }
-        public void SendToAlertProcessor(int age) 
+
+        public void SendToDaysProcessor(Person person)
+        {
+            AlertProcessor.Process(person);
+        }
+        public void SendToAlertProcessor(Person person) 
         { 
-            DaysProcessor.Process(age); 
+            DaysProcessor.Process(person); 
         }
-        public void SendToLeaderBoardProcessor(int age) 
+        public void SendToLeaderBoardProcessor(Person person) 
         {
-            LeaderboardProcessor.Process(age);
+            LeaderboardProcessor.Process(person);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FeelingOldYet.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,6 @@ namespace AgeProcessors
     {
         public AlertProcessor() { }
 
-        public void Process(int age) { }
+        public void Process(Person person) { }
     }
 }

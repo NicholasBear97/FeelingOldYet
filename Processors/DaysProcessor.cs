@@ -1,9 +1,11 @@
-﻿namespace AgeProcessors
+﻿using FeelingOldYet.Models;
+
+namespace AgeProcessors
 {
     public class DaysProcessor : IProcessor
     {
         public DaysProcessor() { }
 
-        public void Process(int age) { }
+        public void Process(Person person) { }
     }
 }
