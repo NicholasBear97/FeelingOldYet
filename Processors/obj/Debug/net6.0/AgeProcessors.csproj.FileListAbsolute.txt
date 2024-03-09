@@ -1,0 +1,12 @@
+D:\Git\FeelingOldYet\Processors\bin\Debug\net6.0\AgeProcessors.deps.json
+D:\Git\FeelingOldYet\Processors\bin\Debug\net6.0\AgeProcessors.dll
+D:\Git\FeelingOldYet\Processors\bin\Debug\net6.0\AgeProcessors.pdb
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.csproj.AssemblyReference.cache
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.AssemblyInfoInputs.cache
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.AssemblyInfo.cs
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.csproj.CoreCompileInputs.cache
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.dll
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\refint\AgeProcessors.dll
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\AgeProcessors.pdb
+D:\Git\FeelingOldYet\Processors\obj\Debug\net6.0\ref\AgeProcessors.dll
