@@ -1,0 +1,40 @@
+﻿@page
+@using FeelingOldYet.Models
+@model FeelingOldYet.Pages.Shared.AgeEventLogModel
+@{
+    <h1>Feeling Old Yet?</h1>
+    <h2>If not, you will soon!</h2>
+
+    <form asp-page-handler="convert" method="post">
+        <label id="Age">Please Insert Your Age:</label>
+        <input type="number" name="AgeInYears"/>
+        <button type="submit">Convert</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Age in Years</th>
+                <th>Age in Days</th>
+                <th>Age Category</th>
+                <th>Fun Fact</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Person person in Model.People)
+            {
+                <tr>
+                    <td>@person.AgeInYears</td>
+                    <td>@person.AgeInDays</td>
+                    <td>@person.AgeCategory</td>
+                    <td>@person.FunFact</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <form asp-page-handler="clear" method="post">
+        <button type="submit">Clear</button>
+    </form>
+}
+

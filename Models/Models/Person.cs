@@ -4,23 +4,59 @@ namespace FeelingOldYet.Models
 {
     public class Person
     {
-        public string? Name { get; set; }
+        #region Properties
+        public int Id { get; set; } = 0;
 
-        public int Age { get; set; }
+        private int ageInYears = 0;
+        public int AgeInYears
+        {
+            get
+            {
+                return ageInYears;
+            }
+            set
+            {
+                ageInYears = value;
 
-        public int ID { get; set; }
+                if (value >= 0 && value <= 100)
+                {
+                    AgeInDays = ConvertYearsToDays(value);
+                }
+            }
+        }
 
+        public string? AgeCategory { get; set; } = string.Empty;
+        public int AgeInDays { get; set; } = 0;
+
+        public string? FunFact { get; set; } = string.Empty;
+
+        #endregion
+
+        #region Constructors
         public Person() { }
 
-        public Person(string? name, int age)
+        public Person(int ageInYears)
         {
-            Name = name;
-            Age = age;
-        }
+            AgeInYears = ageInYears;
 
-        public void UpdateId(int id)
-        {
-            ID = id;
+            AgeInDays = ConvertYearsToDays(ageInYears);
         }
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Convert input number of years to number of days.
+        /// </summary>
+        /// <param name="ageInYears"></param>
+        /// <returns>Returns number of days for a corresponding input of years.</returns>
+        public int ConvertYearsToDays(int ageInYears)
+        {
+            int baseAgeInDays = ageInYears * 365;
+            decimal leapDays = ageInYears / 4;
+            var rawAgeInDays = baseAgeInDays + leapDays;
+            bool conversionSuccess = int.TryParse(rawAgeInDays.ToString(), out int ageInDays);
+            return conversionSuccess ? ageInDays : baseAgeInDays;
+        }
+        #endregion
     }
 }

@@ -4,14 +4,14 @@
     "D:\\Git\\FeelingOldYet\\FeelingOldYet\\FeelingOldYet.csproj": {}
   },
   "projects": {
-    "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj",
-        "projectName": "DataAccessLayer",
-        "projectPath": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj",
+        "projectName": "DataService",
+        "projectPath": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj",
         "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\obj\\",
+        "outputPath": "D:\\Git\\FeelingOldYet\\DBContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,6 +48,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -96,11 +106,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj": {
+                "projectPath": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj"
               },
-              "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj": {
-                "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj"
+              "D:\\Git\\FeelingOldYet\\Models\\Models.csproj": {
+                "projectPath": "D:\\Git\\FeelingOldYet\\Models\\Models.csproj"
+              },
+              "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj": {
+                "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj"
               }
             }
           }
@@ -205,12 +218,12 @@
         }
       }
     },
-    "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj": {
+    "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj",
-        "projectName": "AgeProcessors",
-        "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj",
+        "projectUniqueName": "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj",
+        "projectName": "Processors",
+        "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj",
         "packagesPath": "C:\\Users\\nicho\\.nuget\\packages\\",
         "outputPath": "D:\\Git\\FeelingOldYet\\Processors\\obj\\",
         "projectStyle": "PackageReference",
@@ -234,6 +247,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj": {
+                "projectPath": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj"
+              },
               "D:\\Git\\FeelingOldYet\\Models\\Models.csproj": {
                 "projectPath": "D:\\Git\\FeelingOldYet\\Models\\Models.csproj"
               }
@@ -249,6 +265,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

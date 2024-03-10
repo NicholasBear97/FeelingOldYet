@@ -100,7 +100,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
         "type": "package",
         "compile": {
           "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
@@ -185,30 +185,19 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "AgeProcessors/1.0.0": {
+      "DataService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.2",
           "Models": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/AgeProcessors.dll": {}
+          "bin/placeholder/DataService.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AgeProcessors.dll": {}
-        }
-      },
-      "DataAccessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataAccessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccessLayer.dll": {}
+          "bin/placeholder/DataService.dll": {}
         }
       },
       "Models/1.0.0": {
@@ -219,6 +208,21 @@
         },
         "runtime": {
           "bin/placeholder/Models.dll": {}
+        }
+      },
+      "Processors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DataService": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Processors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Processors.dll": {}
         }
       }
     }
@@ -364,15 +368,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
-      "sha512": "h3j/QfmFN4S0w4C2A6X7arXij/M/OVw3uQHSOFxnND4DyAzO1F9eMX7Eti7lU/OkSthEE0WzRsfT/Dmx86jzCw==",
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0": {
+      "sha512": "cjWrLkJXK0rs4zofsK4bSdg+jhDLTaxrkXu4gS6Y7MAlCvRyNNgwY/lJi5RDlQOnSZweHqoyvgvbdvQsRIW+hg==",
       "type": "package",
-      "path": "microsoft.extensions.dependencyinjection.abstractions/7.0.0",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "LICENSE.TXT",
+        "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
         "buildTransitive/net462/_._",
@@ -384,11 +389,13 @@
         "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
         "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
-        "microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -573,28 +580,29 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "AgeProcessors/1.0.0": {
+    "DataService/1.0.0": {
       "type": "project",
-      "path": "../Processors/AgeProcessors.csproj",
-      "msbuildProject": "../Processors/AgeProcessors.csproj"
-    },
-    "DataAccessLayer/1.0.0": {
-      "type": "project",
-      "path": "../DataAccessLayer/DataAccessLayer.csproj",
-      "msbuildProject": "../DataAccessLayer/DataAccessLayer.csproj"
+      "path": "../DBContext/DataService.csproj",
+      "msbuildProject": "../DBContext/DataService.csproj"
     },
     "Models/1.0.0": {
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "Processors/1.0.0": {
+      "type": "project",
+      "path": "../Processors/Processors.csproj",
+      "msbuildProject": "../Processors/Processors.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AgeProcessors >= 1.0.0",
-      "DataAccessLayer >= 1.0.0",
+      "DataService >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
-      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.2"
+      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.2",
+      "Models >= 1.0.0",
+      "Processors >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -630,11 +638,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj"
+            "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj"
             },
-            "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj": {
-              "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj"
+            "D:\\Git\\FeelingOldYet\\Models\\Models.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\Models\\Models.csproj"
+            },
+            "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj"
             }
           }
         }

@@ -1,7 +1,18 @@
+using DataService;
+using Processors;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<DbDataService>();
+
+builder.Services.AddScoped<IProcessor, FactProcessor>();
+
+builder.Services.AddScoped<IProcessor, CategoryProcessor>();
+
+builder.Services.AddScoped<IProcessorStrategy, ProcessorStrategy>();
 
 var app = builder.Build();
 

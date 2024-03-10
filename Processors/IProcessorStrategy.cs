@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AgeProcessors
+namespace Processors
 {
-    public class AlertProcessor : IProcessor
+    public interface IProcessorStrategy
     {
-        public AlertProcessor() { }
-
-        public void Process(Person person) { }
+        public void ProcessPerson(Person person);
     }
 }
