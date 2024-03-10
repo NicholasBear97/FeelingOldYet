@@ -15,7 +15,7 @@ namespace Processors
         Young_Adult = 4,
         Adult = 5,
         Retired_Adult = 6,
-        Error = 999,
+        Invalid_Age = 999,
         Unknown = 1000
     }
 }

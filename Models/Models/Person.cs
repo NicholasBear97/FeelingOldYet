@@ -4,6 +4,7 @@ namespace FeelingOldYet.Models
 {
     public class Person
     {
+        #region Properties
         public int Id { get; set; } = 0;
 
         private int ageInYears = 0;
@@ -16,14 +17,22 @@ namespace FeelingOldYet.Models
             set
             {
                 ageInYears = value;
-                AgeInDays = ConvertYearsToDays(value);
+
+                if (value >= 0 && value <= 100)
+                {
+                    AgeInDays = ConvertYearsToDays(value);
+                }
             }
         }
 
-        public string? AlertMessage { get; set; } = string.Empty;
+        public string? AgeCategory { get; set; } = string.Empty;
         public int AgeInDays { get; set; } = 0;
 
+        public string? FunFact { get; set; } = string.Empty;
 
+        #endregion
+
+        #region Constructors
         public Person() { }
 
         public Person(int ageInYears)
@@ -32,7 +41,14 @@ namespace FeelingOldYet.Models
 
             AgeInDays = ConvertYearsToDays(ageInYears);
         }
+        #endregion
 
+        #region Methods
+        /// <summary>
+        /// Convert input number of years to number of days.
+        /// </summary>
+        /// <param name="ageInYears"></param>
+        /// <returns>Returns number of days for a corresponding input of years.</returns>
         public int ConvertYearsToDays(int ageInYears)
         {
             int baseAgeInDays = ageInYears * 365;
@@ -41,5 +57,6 @@ namespace FeelingOldYet.Models
             bool conversionSuccess = int.TryParse(rawAgeInDays.ToString(), out int ageInDays);
             return conversionSuccess ? ageInDays : baseAgeInDays;
         }
+        #endregion
     }
 }
