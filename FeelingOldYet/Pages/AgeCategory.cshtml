@@ -1,0 +1,32 @@
+﻿@page
+@using FeelingOldYet.Models
+@model FeelingOldYet.Pages.Shared.AgeCategoryModel
+@{
+    <h1>Feeling Old Yet?</h1>
+    <h2>If not, you will soon!</h2>
+
+    <form method="post">
+        <label id="Age">Please Insert Your Age:</label>
+        <input type="number" name="AgeInYears"/>
+        <button type="submit">Submit</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Age in Days</th>
+                <th>Age Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Person person in Model.People)
+            {
+                <tr>
+                    <td>@person.AgeInDays</td>
+                    <td>@person.AlertMessage</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+}

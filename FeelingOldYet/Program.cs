@@ -1,7 +1,11 @@
+using DataService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<DbDataService>();
 
 var app = builder.Build();
 

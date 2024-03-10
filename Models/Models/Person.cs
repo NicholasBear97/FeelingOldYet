@@ -4,23 +4,42 @@ namespace FeelingOldYet.Models
 {
     public class Person
     {
-        public string? Name { get; set; }
+        public int Id { get; set; } = 0;
 
-        public int Age { get; set; }
+        private int ageInYears = 0;
+        public int AgeInYears
+        {
+            get
+            {
+                return ageInYears;
+            }
+            set
+            {
+                ageInYears = value;
+                AgeInDays = ConvertYearsToDays(value);
+            }
+        }
 
-        public int ID { get; set; }
+        public string? AlertMessage { get; set; } = string.Empty;
+        public int AgeInDays { get; set; } = 0;
+
 
         public Person() { }
 
-        public Person(string? name, int age)
+        public Person(int ageInYears)
         {
-            Name = name;
-            Age = age;
+            AgeInYears = ageInYears;
+
+            AgeInDays = ConvertYearsToDays(ageInYears);
         }
 
-        public void UpdateId(int id)
+        public int ConvertYearsToDays(int ageInYears)
         {
-            ID = id;
+            int baseAgeInDays = ageInYears * 365;
+            decimal leapDays = ageInYears / 4;
+            var rawAgeInDays = baseAgeInDays + leapDays;
+            bool conversionSuccess = int.TryParse(rawAgeInDays.ToString(), out int ageInDays);
+            return conversionSuccess ? ageInDays : baseAgeInDays;
         }
     }
 }

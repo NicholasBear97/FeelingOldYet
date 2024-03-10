@@ -185,30 +185,19 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "AgeProcessors/1.0.0": {
+      "DataService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.2",
+          "Microsoft.EntityFrameworkCore.InMemory": "7.0.2",
           "Models": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/AgeProcessors.dll": {}
+          "bin/placeholder/DataService.dll": {}
         },
         "runtime": {
-          "bin/placeholder/AgeProcessors.dll": {}
-        }
-      },
-      "DataAccessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataAccessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataAccessLayer.dll": {}
+          "bin/placeholder/DataService.dll": {}
         }
       },
       "Models/1.0.0": {
@@ -219,6 +208,19 @@
         },
         "runtime": {
           "bin/placeholder/Models.dll": {}
+        }
+      },
+      "Processors/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Processors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Processors.dll": {}
         }
       }
     }
@@ -573,28 +575,29 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "AgeProcessors/1.0.0": {
+    "DataService/1.0.0": {
       "type": "project",
-      "path": "../Processors/AgeProcessors.csproj",
-      "msbuildProject": "../Processors/AgeProcessors.csproj"
-    },
-    "DataAccessLayer/1.0.0": {
-      "type": "project",
-      "path": "../DataAccessLayer/DataAccessLayer.csproj",
-      "msbuildProject": "../DataAccessLayer/DataAccessLayer.csproj"
+      "path": "../DBContext/DataService.csproj",
+      "msbuildProject": "../DBContext/DataService.csproj"
     },
     "Models/1.0.0": {
       "type": "project",
       "path": "../Models/Models.csproj",
       "msbuildProject": "../Models/Models.csproj"
+    },
+    "Processors/1.0.0": {
+      "type": "project",
+      "path": "../Processors/Processors.csproj",
+      "msbuildProject": "../Processors/Processors.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "AgeProcessors >= 1.0.0",
-      "DataAccessLayer >= 1.0.0",
+      "DataService >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
-      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.2"
+      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.2",
+      "Models >= 1.0.0",
+      "Processors >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -630,11 +633,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj": {
-              "projectPath": "D:\\Git\\FeelingOldYet\\DataAccessLayer\\DataAccessLayer.csproj"
+            "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\DBContext\\DataService.csproj"
             },
-            "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj": {
-              "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\AgeProcessors.csproj"
+            "D:\\Git\\FeelingOldYet\\Models\\Models.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\Models\\Models.csproj"
+            },
+            "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj": {
+              "projectPath": "D:\\Git\\FeelingOldYet\\Processors\\Processors.csproj"
             }
           }
         }

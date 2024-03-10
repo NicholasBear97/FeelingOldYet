@@ -15,12 +15,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Git\FeelingOldYet\FeelingOldYet
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Git/FeelingOldYet/FeelingOldYet/Pages/AgeLeaderboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdlTGVhZGVyYm9hcmQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Git/FeelingOldYet/FeelingOldYet/Pages/AgeStatistics.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdlU3RhdGlzdGljcy5jc2h0bWw=
+[D:/Git/FeelingOldYet/FeelingOldYet/Pages/AgeCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Git/FeelingOldYet/FeelingOldYet/Pages/Error.cshtml]
