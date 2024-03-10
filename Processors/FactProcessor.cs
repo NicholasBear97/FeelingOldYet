@@ -82,7 +82,7 @@ namespace Processors
         public string GeneratePercentage(Person personToCheck, List<Person> tempPeople)
         {
             double olderThan = 0;
-            double totalPeople = (double)(tempPeople.Count - 1);
+            double totalPeople = 0;
 
             foreach (Person person in tempPeople)
             {
@@ -99,6 +99,8 @@ namespace Processors
                     {
                         totalPeople--;
                     }
+
+                    totalPeople++;
                 }
             }
 
